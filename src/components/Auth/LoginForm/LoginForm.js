@@ -19,9 +19,7 @@ export default function LoginForm({ setSelectedForm }) {
       password: Yup.string().required(),
     }),
     onSubmit: async (formData) => {
-      setIsLoading(true);
-      dispatch(startLogin(formData));
-      setIsLoading(false);
+      dispatch(startLogin(formData), setIsLoading);
     },
   });
 

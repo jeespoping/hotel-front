@@ -3,8 +3,9 @@ import { types } from "../types/types";
 import { setToken } from "../utils/token";
 import Swal from "sweetalert2";
 
-export const startLogin = (formData) => {
+export const startLogin = (formData, setIsLoading) => {
   return async (dispatch) => {
+    setIsLoading(true);
     try {
       const { data } = await httpSinToken.post("/login", formData);
 
@@ -24,6 +25,7 @@ export const startLogin = (formData) => {
       console.log(error);
       Swal.fire("Error", "Código o Contraseña inválida", "error");
     }
+    setIsLoading(false);
   };
 };
 

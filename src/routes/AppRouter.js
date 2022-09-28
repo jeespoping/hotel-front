@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { startChecking } from "../actions/auth";
+import LayoutBasic from "../layouts/LayoutBasic/LayoutBasic";
 import Auth from "../Pages/Auth/Auth";
 import DashboardRoutes from "./DashboardRoutes";
 import PrivateRoute from "./PrivateRoute";
@@ -33,7 +34,7 @@ export default function AppRouter() {
 
           <PrivateRoute
             path="/"
-            component={DashboardRoutes}
+            component={LayoutBasic}
             isAuthenticated={!!res}
           />
         </Switch>

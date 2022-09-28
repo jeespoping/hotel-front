@@ -6,8 +6,7 @@ export default function DashboardRoutes() {
   return (
     <>
       <Switch>
-        <Route exact path="/inicio" component={Home} />
-        <Redirect to="/inicio" />
+        <Route exact path="/" component={Home} />
       </Switch>
     </>
   );
