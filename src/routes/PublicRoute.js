@@ -1,11 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Navigate, Outlet } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 
-export default function PublicRoute({ isAuthenticated }) {
-  return isAuthenticated ? <Navigate to="/" /> : <Outlet />;
+export default function PublicRoute({
+  isAuthenticated,
+  component: Component,
+  ...rest
+}) {
+  return (
+    <Route
+      {...rest}
+      component={(props) =>
+        isAuthenticated ? <Redirect to="/" /> : <Component {...props} />
+      }
+    />
+  );
 }
 
 PublicRoute.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
+  component: PropTypes.func.isRequired,
 };
