@@ -1,18 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Grid } from "semantic-ui-react";
+import TopBar from "../../components/TopBar";
 import DashboardRoutes from "../../routes/DashboardRoutes";
+import MenuLeft from "../../components/MenuLeft";
+import { Grid } from "semantic-ui-react";
 import "./LayoutBasic.scss";
 
 export default function LayoutBasic() {
   return (
-    <Grid>
+    <Grid className="layout-basic">
       <Grid.Row>
         <Grid.Column width={3}>
-          <h1>Menu left</h1>
+          <MenuLeft />
         </Grid.Column>
         <Grid.Column className="content" width={13}>
-          <h1>Top bar</h1>
+          <TopBar />
           <DashboardRoutes />
         </Grid.Column>
       </Grid.Row>

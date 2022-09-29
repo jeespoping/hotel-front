@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { startChecking } from "../actions/auth";
 import LayoutBasic from "../layouts/LayoutBasic/LayoutBasic";
 import Auth from "../Pages/Auth/Auth";
-import DashboardRoutes from "./DashboardRoutes";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 

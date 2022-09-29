@@ -6,7 +6,7 @@ import { startLogin } from "../../../actions/auth";
 import { Button, Icon, Form, Input } from "semantic-ui-react";
 import "./LoginForm.scss";
 
-export default function LoginForm({ setSelectedForm }) {
+export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -19,7 +19,7 @@ export default function LoginForm({ setSelectedForm }) {
       password: Yup.string().required(),
     }),
     onSubmit: async (formData) => {
-      dispatch(startLogin(formData), setIsLoading);
+      dispatch(startLogin(formData, setIsLoading));
     },
   });
 

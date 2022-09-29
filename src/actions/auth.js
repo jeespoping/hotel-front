@@ -40,9 +40,20 @@ export const startChecking = () => {
   };
 };
 
+export const startLogout = () => {
+  return (dispatch) => {
+    localStorage.clear();
+    dispatch(Logout());
+  };
+};
+
 const checkingFinish = () => ({ type: types.authCheckingFinish });
 
 const Login = (user) => ({
   type: types.authLogin,
   payload: user,
+});
+
+const Logout = () => ({
+  type: types.authLogout,
 });
