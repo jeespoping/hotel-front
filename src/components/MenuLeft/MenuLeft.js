@@ -40,14 +40,6 @@ export default function MenuLeft() {
             <Icon name="home" /> Inicio
           </Menu.Item>
         </div>
-        <div className="footer">
-          <Menu.Item onClick={() => handlerModal("hotel")}>
-            <Icon name="plus square outline" /> Nuevo Hotel
-          </Menu.Item>
-          <Menu.Item onClick={() => handlerModal("habitacion")}>
-            <Icon name="plus square outline" /> Nueva habitacion
-          </Menu.Item>
-        </div>
       </Menu>
       <BasicModal show={showModal} setShow={setShowModal} title={titleModal}>
         {contentModal}

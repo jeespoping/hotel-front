@@ -10,7 +10,8 @@ export default function TableBasic({ columns, data }) {
   const filteredItems = filter(
     data,
     (item) =>
-      item.name && item.name.toLowerCase().includes(filterText.toLowerCase())
+      item.fileName &&
+      item.fileName.toLowerCase().includes(filterText.toLowerCase())
   );
 
   const customStyles = {

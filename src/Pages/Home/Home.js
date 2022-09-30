@@ -9,7 +9,7 @@ import "./Home.scss";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const { data, checking } = useSelector((state) => state.hotel);
+  const data = useSelector((state) => state.hotel);
 
   const [loadingDelete, setLoadingDelete] = useState(false);
 
@@ -31,73 +31,30 @@ export default function Home() {
 
   const columns = [
     {
+      name: "Descripcion",
+      selector: (row) => row.description,
+      sortable: true,
+    },
+    {
+      name: "Publicado",
+      selector: (row) => row.published,
+      sortable: true,
+    },
+    {
       name: "Nombre",
-      selector: (row) => row.name,
+      selector: (row) => row.fileName,
       sortable: true,
     },
     {
-      name: "Direccion",
-      selector: (row) => row.address,
+      name: "Precio",
+      selector: (row) => row.price,
       sortable: true,
-    },
-    {
-      name: "Ciudad",
-      selector: (row) => row.city,
-      sortable: true,
-    },
-    {
-      name: "Nit",
-      selector: (row) => row.nit,
-      sortable: true,
-    },
-    {
-      name: "# Cuartos",
-      selector: (row) => row.room,
-      sortable: true,
-    },
-    {
-      name: "ver",
-      cell: (row) => (
-        <Button inverted color="teal">
-          <Icon name="eye" />
-        </Button>
-      ),
-      width: "90px",
-    },
-    {
-      name: "editar",
-      cell: (row) => (
-        <>
-          <Button inverted color="green">
-            <Icon name="edit outline" />
-          </Button>
-        </>
-      ),
-      width: "90px",
-    },
-    {
-      name: "Eliminar",
-      cell: (row) => (
-        <Button
-          onClick={() => onDelete(row.id)}
-          loading={loadingDelete}
-          inverted
-          color="red"
-        >
-          <Icon name="delete" />
-        </Button>
-      ),
-      width: "90px",
     },
   ];
 
   useEffect(() => {
     dispatch(startHotels());
   }, [dispatch]);
-
-  if (checking) {
-    return null;
-  }
 
   return (
     <div>
