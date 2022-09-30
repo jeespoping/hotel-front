@@ -1,0 +1,37 @@
+@import "../../../index.scss";
+
+.table-basic{
+    padding-bottom: 50px;
+    margin: 50px auto !important;
+
+    .rdt_TableHeadRow{
+        background: $background-grey !important;
+        color: $font-light;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .rdt_TableRow{
+        color: $font-light;
+        
+        &:nth-child(odd){
+            background-color: $background-grey-light;
+        }
+        &:nth-child(even){
+            background-color: $background-grey-medium;
+        }
+    }
+
+    header, nav{
+        background: $background-grey !important;
+    }
+
+    nav{
+        color: $font-light;
+        font-weight: bold;
+    }
+
+    .sc-ezOQGI.hoQsHK{
+        background: $background-light;
+    }
+}

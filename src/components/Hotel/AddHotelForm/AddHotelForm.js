@@ -16,7 +16,9 @@ export default function AddHotelForm({ setShowModal }) {
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: Yup.object({
-      name: Yup.string().required(),
+      name: Yup.string()
+        .required()
+        .notOneOf(keys(keyBy(data, "name"))),
       city: Yup.string().required(),
       room: Yup.number().required(),
       // keys(keyBy(data, "nit")) esta logia la cree para que no se repitan los nit

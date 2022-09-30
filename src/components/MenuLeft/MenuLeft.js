@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, Icon } from "semantic-ui-react";
 import AddHotelForm from "../Hotel/AddHotelForm";
+import AddRoomForm from "../Hotel/AddRoomForm/AddRoomForm";
 import BasicModal from "../Modal/BasicModal";
 
 import "./MenuLeft.scss";
@@ -15,6 +16,11 @@ export default function MenuLeft() {
       case "hotel":
         setTitleModal("Nuevo hotel");
         setContentModal(<AddHotelForm setShowModal={setShowModal} />);
+        setShowModal(true);
+        break;
+      case "habitacion":
+        setTitleModal("Crear habitaciones");
+        setContentModal(<AddRoomForm setShowModal={setShowModal} />);
         setShowModal(true);
         break;
 
@@ -37,6 +43,9 @@ export default function MenuLeft() {
         <div className="footer">
           <Menu.Item onClick={() => handlerModal("hotel")}>
             <Icon name="plus square outline" /> Nuevo Hotel
+          </Menu.Item>
+          <Menu.Item onClick={() => handlerModal("habitacion")}>
+            <Icon name="plus square outline" /> Nueva habitacion
           </Menu.Item>
         </div>
       </Menu>

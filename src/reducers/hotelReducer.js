@@ -24,6 +24,12 @@ export const hotelReducer = (state = initilState, action) => {
         data: [...state.data, action.payload.data],
         checking: false,
       };
+    case types.hotelDeleted:
+      return {
+        ...state,
+        data: state.data.filter((e) => e.id !== action.payload),
+        checking: false,
+      };
 
     default:
       return state;

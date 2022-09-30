@@ -34,6 +34,21 @@ export const startAddHotel = (formData, setIsLoading, setShowModal) => {
   };
 };
 
+export const startDeleteHotel = (id, setIsLoading) => {
+  return async (dispatch) => {
+    setIsLoading(true);
+    try {
+      const { data } = await httpConToken.delete(`/hotel/${id}`);
+      if (data?.res) {
+        dispatch(hotelDeleted(id));
+      } else {
+        Swal.fire("Error", "Error al crear el hotel", "error");
+      }
+    } catch (error) {}
+    setIsLoading(false);
+  };
+};
+
 const hotelStart = (data) => ({
   type: types.hotelStart,
   payload: data,
@@ -42,4 +57,9 @@ const hotelStart = (data) => ({
 const hotelAddNew = (data) => ({
   type: types.hotelAddNew,
   payload: data,
+});
+
+const hotelDeleted = (id) => ({
+  type: types.hotelDeleted,
+  payload: id,
 });
