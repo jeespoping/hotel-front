@@ -6,13 +6,11 @@ Este proyecto fue desarrollado en React.
 
 Node 16.14.2
 
-
-## Instalación
 ## Usuarios
 email: amir.haley@example.net
 password: password
 
-##Instalación
+## Instalación
 1. Descarga el repositorio
 2. Entrar a la carpeta desde la terminal 
 3. Ejecutar `npm install` o `yarn`
