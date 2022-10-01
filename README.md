@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Proyecto de hotel-front
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue desarrollado en React.
 
-## Available Scripts
+## Versión de node js
 
-In the project directory, you can run:
+Node 16.14.2
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instalación
+## Usuarios
+email: amir.haley@example.net
+password: password
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##Instalación
+1. Descarga el repositorio
+2. Entrar a la carpeta desde la terminal 
+3. Ejecutar `npm install` o `yarn`
+4. Ejecutar `npm start` o `yarn start`
+5. Si se presenta el siguiente problema: 
+<img src="https://jeespoping-ecomerce.s3.us-east-2.amazonaws.com/WhatsApp+Image+2022-10-01+at+3.42.04+PM.jpeg" width="500" >
+Esto es debido a que el módulo semantic en su versión actual presenta este error.
+6. debe parar la ejecucion con `CTRL + C`;
+7. Irse a la carpeta node_module del proyecto
+8. Eliminar la carpeta cache
+<img src="https://jeespoping-ecomerce.s3.us-east-2.amazonaws.com/WhatsApp+Image+2022-10-01+at+3.50.36+PM.jpeg" width="500" >
+10. En la misma carpte de node_module buscar la carpeta llamada `semantic-ui-css`
+11. y abrir los archivos `semantic.css` y `semantic.min.css`
+<img src="https://jeespoping-ecomerce.s3.us-east-2.amazonaws.com/WhatsApp+Image+2022-10-01+at+3.53.55+PM.jpeg" width="500" >
 
-### `npm test`
+12. Hacer una busqueda en ambos archivos de `;;` donde esten dos puntos y comas elimnar uno y dejar solo uno
+<img src="https://jeespoping-ecomerce.s3.us-east-2.amazonaws.com/WhatsApp+Image+2022-10-01+at+3.56.00+PM.jpeg" width="500" >
+<img src="https://jeespoping-ecomerce.s3.us-east-2.amazonaws.com/WhatsApp+Image+2022-10-01+at+3.56.33+PM.jpeg" width="500" >
+13. Después de haber realizado los pasos anteriores podemos ejecutar de nuevo el proyecto
+14. Para ser desplegado la aplicación se tiene que tener en cuenta que el backend ya está iniciado
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Configuraciones
+1. Existe un archivo en la raiz del proyecto llamado .env, en este esta declarado la variable REACT_APP_API_URL, donde se espesifica la url base de peticiones, para este caso
+la url es http://hotel-back.test/api/v1, debido a que se ejecuto con laragon y laravel
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Presentaciones
+### Inicio o raiz
+<img src="https://media.giphy.com/media/fhpByHicoTifdbFOdv/giphy.gif" width="500" >
+### Login
+<img src="https://media.giphy.com/media/8SFcqGNdLTHAgmAwR2/giphy.gif" width="500" >
+### Dashboard
+<img src="https://media.giphy.com/media/t4X2wbIJyqznekOR1G/giphy.gif" width="500" >
+<img src="https://media.giphy.com/media/uQC8dWD1W1PcgpBfqB/giphy.gif" width="500" >
+<img src="https://media.giphy.com/media/0qeGCdZ22uvu6QJndu/giphy.gif" width="500" >
