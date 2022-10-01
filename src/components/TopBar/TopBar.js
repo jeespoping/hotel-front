@@ -4,6 +4,7 @@ import { startLogout } from "../../actions/auth";
 import { Icon, Image } from "semantic-ui-react";
 import UserImage from "../../assets/png/user.png";
 import "./TopBar.scss";
+import { Link } from "react-router-dom";
 
 export default function TopBar() {
   const { user } = useSelector((state) => state.auth);
@@ -16,6 +17,9 @@ export default function TopBar() {
     <div className="top-bar">
       <div className="top-bar__right">
         <div className="text">
+          <Link to="/">
+            <div className="ir">Ir al hotel</div>
+          </Link>
           <Image src={UserImage} />
           {user.name}
         </div>

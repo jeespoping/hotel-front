@@ -11,7 +11,11 @@ export default function PublicRoute({
     <Route
       {...rest}
       component={(props) =>
-        isAuthenticated ? <Redirect to="/" /> : <Component {...props} />
+        isAuthenticated ? (
+          <Redirect to="/dashboard" />
+        ) : (
+          <Component {...props} />
+        )
       }
     />
   );

@@ -1,0 +1,52 @@
+@import "../../index.scss";
+
+.header-hotel{
+    &.ui.grid {
+        margin: 0;
+    }
+
+    &__title {
+        position: relative;
+        background-color: $background-dark-absolute;
+        padding: 10px 0;
+        color: $font-light;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    &__delivery {
+        text-align: center;
+        color: $primary;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 10px 0;
+
+        p{
+            color: $font-light;
+        }
+      }
+    
+    &__rooms{
+        display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $background-dark-absolute;
+      color: $font-light;
+      padding: 15px 20px;
+      margin-top: 15px;
+
+      &-info{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary;
+        font-size: 20px;
+        p{
+            margin-right: 10px;
+            margin-left: 20px;
+            color: $font-light;
+            
+        }
+      }
+    }
+}

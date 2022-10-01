@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import BackgroundApp from "../../assets/jpg/hoteles.jpg";
 import Logo from "../../assets/png/logo.png";
@@ -24,7 +25,9 @@ export default function Auth() {
       <div className="auth__dark"></div>
       <div className="auth__box">
         <div className="auth__box-log">
-          <img src={Logo} alt="cameron"></img>
+          <Link to="/">
+            <img src={Logo} alt="cameron"></img>
+          </Link>
           {handleForm()}
         </div>
       </div>
