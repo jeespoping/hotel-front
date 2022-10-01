@@ -8,7 +8,11 @@ Node 16.14.2
 
 
 ## Instalación
+## Usuarios
+email: amir.haley@example.net
+password: password
 
+##Instalación
 1. Descarga el repositorio
 2. Entrar a la carpeta desde la terminal 
 3. Ejecutar `npm install` o `yarn`
@@ -36,3 +40,10 @@ la url es http://hotel-back.test/api/v1, debido a que se ejecuto con laragon y l
 
 ## Presentaciones
 ### Inicio o raiz
+<img src="https://media.giphy.com/media/fhpByHicoTifdbFOdv/giphy.gif" width="500" >
+### Login
+<img src="https://media.giphy.com/media/8SFcqGNdLTHAgmAwR2/giphy.gif" width="500" >
+### Dashboard
+<img src="https://media.giphy.com/media/t4X2wbIJyqznekOR1G/giphy.gif" width="500" >
+<img src="https://media.giphy.com/media/uQC8dWD1W1PcgpBfqB/giphy.gif" width="500" >
+<img src="https://media.giphy.com/media/0qeGCdZ22uvu6QJndu/giphy.gif" width="500" >
