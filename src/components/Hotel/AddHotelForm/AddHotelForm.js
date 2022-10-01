@@ -1,34 +1,48 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { keyBy, keys } from "lodash";
+import { keyBy, keys, remove } from "lodash";
 import { Form, Input, Button } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
-import { startAddHotel } from "../../../actions/hotel";
+import { startAddHotel, startUpdateHotel } from "../../../actions/hotel";
 import "./AddHotelForm.scss";
 
-export default function AddHotelForm({ setShowModal }) {
+export default function AddHotelForm({ setShowModal, rowId }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
   const { checking, data } = useSelector((state) => state.hotel);
 
   const formik = useFormik({
-    initialValues: initialValues(),
+    initialValues: initialValues(rowId),
     validationSchema: Yup.object({
       name: Yup.string()
         .required()
-        .notOneOf(keys(keyBy(data, "name"))),
+        .notOneOf(
+          !rowId
+            ? keys(keyBy(data, "name"))
+            : remove(keys(keyBy(data, "name")), (n) => n !== rowId.name)
+        ),
       city: Yup.string().required(),
       room: Yup.number().required(),
       // keys(keyBy(data, "nit")) esta logia la cree para que no se repitan los nit
       nit: Yup.string()
         .required()
-        .notOneOf(keys(keyBy(data, "nit"))),
+        .notOneOf(
+          !rowId
+            ? keys(keyBy(data, "nit"))
+            : remove(keys(keyBy(data, "nit")), (n) => n !== rowId.nit)
+        ),
       address: Yup.string().required(),
     }),
     onSubmit: (formValues) => {
-      dispatch(startAddHotel(formValues, setIsLoading, setShowModal));
+      if (!rowId) {
+        dispatch(startAddHotel(formValues, setIsLoading, setShowModal));
+      } else {
+        dispatch(
+          startUpdateHotel(rowId.id, formValues, setIsLoading, setShowModal)
+        );
+      }
     },
   });
 
@@ -82,18 +96,28 @@ export default function AddHotelForm({ setShowModal }) {
         />
       </Form.Field>
       <Button type="submit" loading={isLoading}>
-        Crear Hotel
+        {rowId ? "Editar Hotel" : "Crear Hotel"}
       </Button>
     </Form>
   );
 }
 
-function initialValues() {
-  return {
-    name: "",
-    city: "",
-    address: "",
-    nit: "",
-    room: "",
-  };
+function initialValues(rowId) {
+  if (!rowId) {
+    return {
+      name: "",
+      city: "",
+      address: "",
+      nit: "",
+      room: "",
+    };
+  } else {
+    return {
+      name: rowId.name,
+      city: rowId.city,
+      address: rowId.address,
+      nit: rowId.nit,
+      room: rowId.room,
+    };
+  }
 }

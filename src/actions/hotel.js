@@ -42,9 +42,28 @@ export const startDeleteHotel = (id, setIsLoading) => {
       if (data?.res) {
         dispatch(hotelDeleted(id));
       } else {
-        Swal.fire("Error", "Error al crear el hotel", "error");
+        Swal.fire("Error", "Error al eliminar el hotel", "error");
       }
     } catch (error) {}
+    setIsLoading(false);
+  };
+};
+
+export const startUpdateHotel = (id, formData, setIsLoading, setShowModal) => {
+  return async (dispatch) => {
+    setIsLoading(true);
+    try {
+      const { data } = await httpConToken.put(`/hotel/${id}`, formData);
+      if (data.res) {
+        dispatch(hotelUpdated(id, formData));
+        setShowModal(false);
+      } else {
+        Swal.fire("Error", "Error al editar el hotel", "error");
+      }
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
     setIsLoading(false);
   };
 };
@@ -62,4 +81,12 @@ const hotelAddNew = (data) => ({
 const hotelDeleted = (id) => ({
   type: types.hotelDeleted,
   payload: id,
+});
+
+const hotelUpdated = (id, formData) => ({
+  type: types.hotelUpdated,
+  payload: {
+    id,
+    formData,
+  },
 });

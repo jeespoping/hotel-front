@@ -3,11 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Icon } from "semantic-ui-react";
 import Swal from "sweetalert2";
 import { startDeleteHotel, startHotels } from "../../actions/hotel";
+import AddHotelForm from "../../components/Hotel/AddHotelForm";
+import ViewHotel from "../../components/Hotel/ViewHotel";
+import BasicModal from "../../components/Modal/BasicModal";
 import TableBasic from "../../components/Table/TableBasic";
 
 import "./Home.scss";
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
+  const [titleModal, setTitleModal] = useState(null);
+  const [contentModal, setContentModal] = useState(null);
+
   const dispatch = useDispatch();
   const { data, checking } = useSelector((state) => state.hotel);
 
@@ -20,7 +27,6 @@ export default function Home() {
       confirmButtonText: "Eliminar",
       denyButtonText: `No`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         dispatch(startDeleteHotel(id, setLoadingDelete));
       } else if (result.isDenied) {
@@ -58,7 +64,11 @@ export default function Home() {
     {
       name: "ver",
       cell: (row) => (
-        <Button inverted color="teal">
+        <Button
+          inverted
+          onClick={() => handlerModal("habitaciones", row)}
+          color="teal"
+        >
           <Icon name="eye" />
         </Button>
       ),
@@ -68,7 +78,11 @@ export default function Home() {
       name: "editar",
       cell: (row) => (
         <>
-          <Button inverted color="green">
+          <Button
+            onClick={() => handlerModal("hotel", row)}
+            inverted
+            color="green"
+          >
             <Icon name="edit outline" />
           </Button>
         </>
@@ -91,6 +105,30 @@ export default function Home() {
     },
   ];
 
+  const handlerModal = (type, row) => {
+    switch (type) {
+      case "habitaciones":
+        setTitleModal("Habitaciones");
+        setContentModal(<ViewHotel rowId={row} setShowModal={setShowModal} />);
+        setShowModal(true);
+        break;
+
+      case "hotel":
+        setTitleModal("Editar hotel");
+        setContentModal(
+          <AddHotelForm rowId={row} setShowModal={setShowModal} />
+        );
+        setShowModal(true);
+        break;
+
+      default:
+        setTitleModal(null);
+        setContentModal(null);
+        setShowModal(false);
+        break;
+    }
+  };
+
   useEffect(() => {
     dispatch(startHotels());
   }, [dispatch]);
@@ -99,7 +137,10 @@ export default function Home() {
 
   return (
     <div>
-      <TableBasic columns={columns} data={data} />
+      <TableBasic forFilter="name" columns={columns} data={data} />
+      <BasicModal show={showModal} setShow={setShowModal} title={titleModal}>
+        {contentModal}
+      </BasicModal>
     </div>
   );
 }

@@ -4,13 +4,14 @@ import { filter } from "lodash";
 import { Input } from "semantic-ui-react";
 import "./TableBasic.scss";
 
-export default function TableBasic({ columns, data }) {
+export default function TableBasic({ columns, data, forFilter }) {
   const [filterText, setFilterText] = useState("");
 
   const filteredItems = filter(
     data,
     (item) =>
-      item.name && item.name.toLowerCase().includes(filterText.toLowerCase())
+      item[forFilter] &&
+      item[forFilter].toLowerCase().includes(filterText.toLowerCase())
   );
 
   const customStyles = {

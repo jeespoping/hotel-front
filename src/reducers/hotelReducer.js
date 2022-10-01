@@ -24,6 +24,14 @@ export const hotelReducer = (state = initilState, action) => {
         data: [...state.data, action.payload.data],
         checking: false,
       };
+    case types.hotelUpdated:
+      return {
+        ...state,
+        data: state.data.map((e) =>
+          e.id === action.payload.id ? { ...e, ...action.payload.formData } : e
+        ),
+        checking: false,
+      };
     case types.hotelDeleted:
       return {
         ...state,

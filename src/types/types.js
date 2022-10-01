@@ -9,4 +9,5 @@ export const types = {
   hotelSetActive: "[hotel] Hotels Active",
   hotelAddNew: "[hotel] Hotel Add New",
   hotelDeleted: "[hotel] Hotel Deleted",
+  hotelUpdated: "[hotel] Hotel Updated",
 };

@@ -15,7 +15,9 @@ export default function MenuLeft() {
     switch (type) {
       case "hotel":
         setTitleModal("Nuevo hotel");
-        setContentModal(<AddHotelForm setShowModal={setShowModal} />);
+        setContentModal(
+          <AddHotelForm rowId={null} setShowModal={setShowModal} />
+        );
         setShowModal(true);
         break;
       case "habitacion":
