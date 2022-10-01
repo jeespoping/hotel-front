@@ -14,4 +14,4 @@ Node 16.14.2
 3. Ejecutar `npm install` o `yarn`
 4. Ejecutar `npm start` o `yarn start`
 5. Si se presenta el siguiente problema: 
-<img src="https://media.giphy.com/media/Gj5DfTnqDdlU0qOwPH/giphy.gif" width="500" >
+<img src="[https://media.giphy.com/media/Gj5DfTnqDdlU0qOwPH/giphy.gif](https://jeespoping-ecomerce.s3.us-east-2.amazonaws.com/WhatsApp+Image+2022-10-01+at+3.42.04+PM.jpeg)" width="500" >
