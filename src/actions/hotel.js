@@ -1,11 +1,11 @@
 import Swal from "sweetalert2";
-import { httpConToken, httpSinToken2 } from "../helpers/http";
+import { httpConToken, httpSinToken } from "../helpers/http";
 import { types } from "../types/types";
 
 export const startHotels = () => {
   return async (dispatch) => {
     try {
-      const { data } = await httpSinToken2.get("/books");
+      const { data } = await httpSinToken.get("/hotel");
       dispatch(hotelStart(data));
     } catch (error) {
       console.log(error);
