@@ -37,11 +37,13 @@ Esto es debido a que el módulo semantic en su versión actual presenta este err
 la url es http://hotel-back.test/api/v1, debido a que se ejecuto con laragon y laravel
 
 ## Presentaciones
-## Inicio o raiz
+### Inicio o raiz
 <img src="https://media.giphy.com/media/fhpByHicoTifdbFOdv/giphy.gif" width="500" >
-## Login
+
+### Login
 <img src="https://media.giphy.com/media/8SFcqGNdLTHAgmAwR2/giphy.gif" width="500" >
-## Dashboard
+
+### Dashboard
 <img src="https://media.giphy.com/media/t4X2wbIJyqznekOR1G/giphy.gif" width="500" >
 <img src="https://media.giphy.com/media/uQC8dWD1W1PcgpBfqB/giphy.gif" width="500" >
 <img src="https://media.giphy.com/media/0qeGCdZ22uvu6QJndu/giphy.gif" width="500" >
