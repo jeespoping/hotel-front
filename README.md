@@ -1,9 +1,9 @@
 # Proyecto de hotel-front
 
 Este proyecto fue desarrollado en React.
+[Ir al proyecto](https://hotel-front.netlify.app/)
 
 ## Versión de node js
-
 Node 16.14.2
 
 ## Usuarios
